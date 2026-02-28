@@ -1,10 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Path | Discover the Giant Panda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #003D4C;    /* Deep Teal */
+            --accent-orange: #F26522;   /* Signature Orange */
+            --bg-cream: #FEF9F3;        /* Light background */
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: var(--white);
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-teal);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--primary-teal);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-teal);
+            color: var(--white);
+            padding: 100px 10%;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            max-width: 600px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Grid Layout (Stats/Cards) */
+        .section-container {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Feature Cards */
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-bottom: 5px solid var(--accent-orange);
+            transition: translateY -10px;
+        }
+
+        .card h3 {
+            color: var(--primary-teal);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .card span {
+            display: block;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-teal);
+            color: white;
+            padding: 60px 10% 30px;
+            text-align: center;
+        }
+
+        .footer-line {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This website is hosted on GitHub Pages.</p>
+
+    <nav>
+        <a href="#" class="logo">PANDA<span>PATH</span></a>
+        <div class="nav-links">
+            <a href="#facts">Cool Facts</a>
+            <a href="#diet">Diet</a>
+            <a href="#habitat">Habitat</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Unveiling the World of Giant Pandas</h1>
+        <p>Beyond the bamboo forests lies a story of resilience, unique biology, and gentle wonder.</p>
+        <a href="#facts" class="btn">Explore Facts</a>
+    </header>
+
+    <section id="facts" class="section-container">
+        <h2 class="section-title">Pandas by the Numbers</h2>
+        <div class="grid">
+            <div class="card">
+                <span>14h</span>
+                <h3>Daily Dining</h3>
+                <p>Pandas spend more than half their day eating bamboo to maintain their energy levels.</p>
+            </div>
+            <div class="card">
+                <span>99%</span>
+                <h3>Bamboo Diet</h3>
+                <p>While they are technically bears (carnivorans), bamboo makes up almost their entire diet.</p>
+            </div>
+            <div class="card">
+                <span>6</span>
+                <h3>The "Thumb"</h3>
+                <p>Pandas have an enlarged wrist bone that functions like a thumb to help them grip bamboo stalks.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #fff;" class="section-container">
+        <div class="grid" style="align-items: center;">
+            <div>
+                <h2 style="color: var(--primary-teal); font-size: 2.5rem;">Why are they black and white?</h2>
+                <p>Scientists believe the panda's unique markings serve as camouflage. The white face and neck help them hide in snow, while the black arms and legs help them hide in deep shade forest shadows.</p>
+                <br>
+                <a href="#" class="btn" style="background: var(--primary-teal);">Learn More</a>
+            </div>
+            <div style="background: var(--bg-cream); height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                <p style="font-style: italic; color: #888;"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>PANDA PATH</h2>
+        <p>Spreading awareness about the conservation of our fluffy friends.</p>
+        <div class="footer-line">
+            &copy; 2024 Panda Path Project. Built for Panda Lovers.
+        </div>
+    </footer>
+
 </body>
 </html>
